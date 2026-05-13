@@ -1,16 +1,36 @@
-# React + Vite
+# Job Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React job board with **Redux Toolkit**, **React Router**, **Context** (toasts), and a **REST API** via [json-server](https://github.com/typicode/json-server) (`db.json`).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Login / register (stored in API)
+- Job listing with search, filters, and pagination
+- Apply to jobs; **My applications** dashboard
+- Admin: manage jobs and view applications
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+cp .env.example .env
+npm run dev:full
+```
 
-## Expanding the ESLint configuration
+- App: [http://localhost:5173](http://localhost:5173)  
+- API: [http://localhost:3001](http://localhost:3001) (from `.env` → `VITE_API_URL`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Demo users (see `db.json`): `user@demo.com` / `user123`, `admin@demo.com` / `admin123`.
+
+## Scripts
+
+| Command        | Description                          |
+|----------------|--------------------------------------|
+| `npm run dev`  | Vite dev server only                 |
+| `npm run api`  | json-server only                     |
+| `npm run dev:full` | Vite + json-server (concurrently) |
+| `npm run build`| Production build                     |
+
+## Stack
+
+React 19, Vite, Redux Toolkit, React Router, Axios, json-server.
